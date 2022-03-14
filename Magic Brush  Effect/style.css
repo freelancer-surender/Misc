@@ -1,0 +1,7 @@
+#bridge {
+  width: 1024px;
+  height: 732px;
+  background-image: url("after.png");
+  background-size: cover;
+  cursor: crosshair;
+}
