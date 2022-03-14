@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Milonga);
+body {
+  background-color: black;
+  color: white;
+  font-family: "Milonga";
+  font-size: 90px;
+  text-align: center;
+  padding-top: 300px;
+  overflow: hidden;
+}
+
+span {
+  display: inline-block;
+  animation: smoky 5s 3s both;
+}
+
+span:nth-child(even) {
+  animation: smoky-mirror 5s 3s both;
+}
+
+@keyframes smoky {
+  from {
+    text-shadow: 0 0 40px whitesmoke;
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(15rem, -8rem, 0) rotate(-40deg) skewX(70deg)
+      scale(1.5);
+    text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@keyframes smoky-mirror {
+  from {
+    text-shadow: 0 0 40px whitesmoke;
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(18rem, -8rem, 0) rotate(-40deg) skewX(-70deg)
+      scale(2);
+    text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+span:nth-of-type(1) {
+  animation-delay: 3.1s;
+}
+
+span:nth-of-type(2) {
+  animation-delay: 3.4s;
+}
+
+span:nth-of-type(3) {
+  animation-delay: 3.7s;
+}
+
+span:nth-of-type(4) {
+  animation-delay: 4s;
+}
+
+span:nth-of-type(5) {
+  animation-delay: 4.3s;
+}
+
+span:nth-of-type(6) {
+  animation-delay: 4.6s;
+}
+
+span:nth-of-type(7) {
+  animation-delay: 4.9s;
+}
+
+span:nth-of-type(8) {
+  animation-delay: 5.2s;
+}
+
+span:nth-of-type(9) {
+  animation-delay: 5.5s;
+}
+
+span:nth-of-type(10) {
+  animation-delay: 5.8s;
+}
+
+span:nth-of-type(11) {
+  animation-delay: 6.1s;
+}
