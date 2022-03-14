@@ -1,0 +1,168 @@
+.clock-dial {
+  width: 500px;
+  height: 500px;
+  border: 20px solid #563727;
+  background-color: rgba(222, 158, 72, 0.4);
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 5px 5px 10px grey;
+}
+
+.point {
+  width: 20px;
+  height: 20px;
+  background-color: #563727;
+  border-radius: 50%;
+  position: absolute;
+  top: 240px;
+  left: 240px;
+}
+
+.hour {
+  font-size: 30px;
+  font-weight: bold;
+  color: #372c2e;
+  position: absolute;
+}
+
+.hour-1 {
+  top: 40px;
+  right: 130px;
+}
+.hour-2 {
+  top: 125px;
+  right: 45px;
+}
+.hour-3 {
+  top: 235px;
+  right: 10px;
+}
+.hour-4 {
+  top: 345px;
+  right: 45px;
+}
+.hour-5 {
+  top: 430px;
+  right: 130px;
+}
+.hour-6 {
+  bottom: 10px;
+  left: 240px;
+}
+.hour-7 {
+  top: 430px;
+  left: 130px;
+}
+.hour-8 {
+  top: 345px;
+  left: 45px;
+}
+.hour-9 {
+  top: 235px;
+  left: 10px;
+}
+.hour-10 {
+  top: 125px;
+  left: 45px;
+}
+.hour-11 {
+  top: 40px;
+  left: 130px;
+}
+.hour-12 {
+  top: 10px;
+  left: 235px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: #563727;
+  position: absolute;
+  top: 90px;
+  left: 42.5%;
+}
+
+.minute-hand-wrapper {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border-radius: 50%;
+}
+
+.minute-hand {
+  position: relative;
+}
+
+.minute-hand .hand {
+  width: 4px;
+  height: 200px;
+  background-color: #563727;
+  position: absolute;
+  left: 198px;
+}
+
+.minute-hand .arrow {
+  font-size: 30px;
+  font-weight: bold;
+  color: #563727;
+  transform: rotate(180deg);
+  position: absolute;
+  left: 190px;
+  top: -7px;
+}
+
+.hour-hand-wrapper {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  border-radius: 50%;
+}
+
+.hour-hand {
+  position: relative;
+}
+
+.hour-hand .hand {
+  width: 4px;
+  height: 150px;
+  background-color: #563727;
+  position: absolute;
+  left: 148px;
+}
+
+.hour-hand .arrow {
+  font-size: 30px;
+  font-weight: bold;
+  color: #563727;
+  transform: rotate(180deg);
+  position: absolute;
+  left: 140px;
+  top: -7px;
+}
+
+.second-hand-wrapper {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  border-radius: 50%;
+}
+
+.second-hand {
+  position: relative;
+}
+
+.second-hand .hand {
+  width: 2px;
+  height: 175px;
+  background-color: #aa7228;
+  position: absolute;
+  left: 174px;
+}
