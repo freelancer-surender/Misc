@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #090909;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#left {
+    width: 50vw;
+    height: 100vh;
+    background-color: #2297da;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#right {
+    width: 50vw;
+    height: 100vh;
+    background-color: #2297da;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#left.open, #right.open {
+    animation: screen-open 1s forwards ease-in;
+}
+
+@keyframes screen-open {
+    0% {
+        width: 50vw;
+    }
+    100% {
+        width: 0vw;
+    }
+}
+
+#startBtn {
+    position: absolute;
+    top: calc(50vh - 25px);
+    left: calc(50vw - 75px);
+    z-index: 999;
+    width: 150px;
+    height: 50px;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: "Raleway", serif;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    border: 0;
+    background-color: #000;
+    color: #fff;
+}
+
+#year {
+    color: #fff;
+    font-size: 180px;
+    font-weight: bold;
+    font-family: "Patua One", serif;
+    width: 440px;
+    position: absolute;
+    top: 200px;
+    left: calc(50vw - 220px);
+    opacity: 0;
+}
+
+#year span {
+    margin: 5px;
+}
+
+#year.color #span1 {
+    color: #baff29;
+}
+  
+#year.color #span2 {
+    color: #f85e00;
+}
+  
+#year.color #span3 {
+    color: #4cc9f0;
+}
+  
+#newSpan.color {
+    color: #f72585;
+}
+
+#year.show {
+    animation: show-year 1s forwards ease-in;
+}
+
+@keyframes show-year {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#truck {
+    position: absolute;
+    bottom: 30px;
+    transform: translateX(-200px);
+    will-change: transform;
+}
+
+#truck.move {
+    animation: move-truck-to-right 4s forwards ease-in;
+}
+
+@keyframes move-truck-to-right {
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(calc(50vw + 100px));
+    }
+}
+
+#truck.restart {
+    animation: move-truck-to-end 2s forwards ease-in;
+}
+
+@keyframes move-truck-to-end {
+    0% {
+        transform: translateX(calc(50vw + 100px));
+    }
+    100% {
+        transform: translateX(calc(100vw + 200px));
+    }
+}
+
+.missile-container {
+    position: relative;
+}
+
+#missile {
+    position: absolute;
+    left: 58px;
+    bottom: 10px;
+}
+
+#missile.launch {
+    animation: move-missile-to-top 3s forwards ease-in;
+}
+
+@keyframes move-missile-to-top {
+    0% {
+        bottom: 10px;
+    }
+    100% {
+        bottom: 600px;
+    }
+}
+
+#bomb {
+    position: absolute;
+    top: 293px;
+    left: calc(50vw + 158px);
+    width: 0px;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#bomb.explode {
+    animation: bomb-explode 1s forwards ease-in;
+}
+
+@keyframes bomb-explode {
+    0% {
+        width: 0px;
+    }
+    50% {
+        bottom: 600px;
+        width: 350px;
+    }
+    100% {
+        bottom: 600px;
+        width: 0px;
+    }
+}
+
+#flight {
+    position: absolute;
+    top: 30px;
+    right: -200px;
+    transform: translateX(200px);
+    will-change: transform;
+}
+
+#flight.move {
+    animation: move-flight-to-left 5s forwards ease-in;
+}
+
+@keyframes move-flight-to-left {
+    0% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(calc(-100vw - 200px));
+    }
+}
+
+#newSpan {
+    color: #fff;
+    font-size: 0px;
+    font-weight: bold;
+    font-family: "Patua One", serif;
+    position: absolute;
+    top: 90px;
+    right: calc(50vw - 210px);
+}
+
+#newSpan.drop {
+    animation: drop-span 2s forwards ease-in;
+}
+
+@keyframes drop-span {
+    0% {
+        top: 90px;
+        font-size: 0px;
+    }
+    100% {
+        top: 200px;
+        font-size: 180px;
+    }
+}
+
+#message {
+    position: absolute;
+    top: 500px;
+    left: 0;
+    width: 100vw;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: "Patua One", serif;
+    text-align: center;
+    color: #9fffcb;
+    opacity: 0;
+}
+
+#message.greet {
+    opacity: 1;
+    animation: greet-message 2s infinite ease-in;
+}
+
+@keyframes greet-message {
+    0% {
+        font-size: 50px;
+    }
+    50% {
+        font-size: 100px;
+    }
+    100% {
+        font-size: 50px;
+    }
+}
+
+#fireworks {
+    display: none;
+}
+
+.firework {
+    position: absolute;
+    top: 100%;
+    background: radial-gradient(circle, gold 50px, #0000 0) 80% 90%, 
+    radial-gradient(circle, gold 50px, #0000 0) 95% 90%,
+    radial-gradient(circle, gold 50px, #0000 0) 90% 70%,
+    radial-gradient(circle, gold 50px, #0000 0) 100% 60%,
+    radial-gradient(circle, gold 50px, #0000 0) 55% 80%,
+    radial-gradient(circle, gold 50px, #0000 0) 70% 77%,
+    radial-gradient(circle, gold 50px, #0000 0) 22% 90%,
+    radial-gradient(circle, gold 50px, #0000 0) 45% 90%,
+    radial-gradient(circle, gold 50px, #0000 0) 33% 70%,
+    radial-gradient(circle, gold 50px, #0000 0) 10% 60%,
+    radial-gradient(circle, gold 50px, #0000 0) 31% 80%,
+    radial-gradient(circle, gold 50px, #0000 0) 28% 77%,
+    radial-gradient(circle, gold 50px, #0000 0) 13% 72%,
+    radial-gradient(circle, gold 50px, #0000 0) 80% 10%,
+    radial-gradient(circle, gold 50px, #0000 0) 95% 14%,
+    radial-gradient(circle, gold 50px, #0000 0) 90% 23%,
+    radial-gradient(circle, gold 50px, #0000 0) 100% 43%,
+    radial-gradient(circle, gold 50px, #0000 0) 85% 27%,
+    radial-gradient(circle, gold 50px, #0000 0) 77% 37%,
+    radial-gradient(circle, gold 50px, #0000 0) 60% 7%,
+    radial-gradient(circle, gold 50px, #0000 0) 22% 14%,
+    radial-gradient(circle, gold 50px, #0000 0) 45% 20%,
+    radial-gradient(circle, gold 50px, #0000 0) 33% 34%,
+    radial-gradient(circle, gold 50px, #0000 0) 10% 29%,
+    radial-gradient(circle, gold 50px, #0000 0) 31% 37%,
+    radial-gradient(circle, gold 50px, #0000 0) 28% 7%,
+    radial-gradient(circle, gold 50px, #0000 0) 13% 42%;
+    aspect-ratio: 1;
+    background-size: 3px 3px;
+    background-repeat: no-repeat;
+}
+
+.firework1 {
+    left: 50%;
+    animation: firework 2s infinite;
+    transform: translate(-50%, -900px);
+    will-change: transform;
+}
+
+.firework2 {
+    left: 29%;
+    animation: firework 4s infinite;
+    transform: translate(-50%, -700px);
+    will-change: transform;
+}
+  
+.firework3 {
+    left: 79%;
+    animation: firework 1.5s infinite;
+    transform: translate(-50%, -500px);
+    will-change: transform;
+}
+  
+.firework4 {
+    left: 19%;
+    animation: firework 3.5s infinite;
+    transform: translate(-50%, -850px);
+    will-change: transform;
+}
+  
+.firework5 {
+    left: 68%;
+    animation: firework 5s infinite;
+    transform: translate(-50%, -650px);
+    will-change: transform;
+}
+  
+.firework6 {
+    left: 34%;
+    animation: firework 2.5s infinite;
+    transform: translate(-50%, -550px);
+    will-change: transform;
+}
+
+@keyframes firework {
+    0% {
+        transform: translate(-50%, -50%);
+        width: 3px;
+        opacity: 1;
+    }
+    50% {
+        width: 3px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        opacity: 0;
+    }
+}
